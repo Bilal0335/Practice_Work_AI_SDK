@@ -54,3 +54,23 @@ async def multiply(n1: int, n2: int) -> str:
     """
     print("[blue]=== Tool Used: MULTIPLY ===[/blue]")
     return f"your result is {n1 * n2}"
+
+
+@function_tool
+def calculate_area(length: float, width: float) -> str:
+    return f"Area = {length * width} square units"
+
+@function_tool(name_override="get_weather_args")  # 👈 force tool name
+def get_weather(city: str) -> str:
+    """Get weather info for a city."""
+    return f"Weather in {city}: Sunny, 72°F"
+
+# @function_tool
+# def get_weather(city: str) -> str:
+#     return f"Weather in {city}: Sunny, 72°F"
+
+# --- Extra demo tool ---
+@function_tool
+def new_tool() -> str:
+    """A new demo tool"""
+    return "I'm a new tool!"

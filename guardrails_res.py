@@ -23,10 +23,5 @@ except OutputGuardrailTripwireTriggered as e:
     rich.print(f"[red]Tripwire Triggered Output:[/red] {e}")
 
 
-# guardrails_result = Runner.run_sync(
-#     starting_agent=guardrail_agent,
-#     input="how many room available in Hotel Sannata's?"
-# )
-
 
 

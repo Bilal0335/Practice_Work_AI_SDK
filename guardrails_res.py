@@ -11,7 +11,7 @@ from agents import Runner,InputGuardrailTripwireTriggered,OutputGuardrailTripwir
 try:
     guardrails_result = Runner.run_sync(
         starting_agent=hotel_agent_guardrail,
-        input="how much tax deducted on single room in Hotel Sannata's?"
+        input="How many room available in Hotel Sannata's?"
     )
     
     rich.print(guardrails_result.final_output)

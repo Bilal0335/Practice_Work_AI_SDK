@@ -63,6 +63,7 @@ def calculate_area(length: float, width: float) -> str:
 @function_tool(name_override="get_weather_args")  # 👈 force tool name
 def get_weather(city: str) -> str:
     """Get weather info for a city."""
+    print("[yellow]=== Tool Used: Weather ===[/yellow]")
     return f"Weather in {city}: Sunny, 72°F"
 
 # @function_tool

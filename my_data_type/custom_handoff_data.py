@@ -6,3 +6,8 @@ from pydantic import BaseModel
 class MathReasoning(BaseModel):
     reasoning:str
     question:str
+    result:str
+    
+    
+class WeatherRequest(BaseModel):
+    city: str

@@ -60,15 +60,25 @@ async def multiply(n1: int, n2: int) -> str:
 def calculate_area(length: float, width: float) -> str:
     return f"Area = {length * width} square units"
 
-@function_tool(name_override="get_weather_args")  # 👈 force tool name
-def get_weather(city: str) -> str:
-    """Get weather info for a city."""
-    print("[yellow]=== Tool Used: Weather ===[/yellow]")
-    return f"Weather in {city}: Sunny, 72°F"
-
 # @function_tool
 # def get_weather(city: str) -> str:
+#     """
+#     Get the weather info for a given city.
+
+#     Args:
+#         city (str): The name of the city (e.g., "Karachi", "London").
+    
+#     Returns:
+#         str: Weather description for that city.
+#     """
+#     print("[yellow]=== Tool Used: Weather ===[/yellow]")
 #     return f"Weather in {city}: Sunny, 72°F"
+
+
+@function_tool
+def get_weather(city: str) -> str:
+    print("[yellow]=== Tool Used: Weather ===[/yellow]")
+    return f"Weather in {city}: Sunny, 72°F"
 
 # --- Extra demo tool ---
 @function_tool

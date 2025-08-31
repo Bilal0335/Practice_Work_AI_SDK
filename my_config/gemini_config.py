@@ -3,7 +3,7 @@
 from decouple import config
 from agents import AsyncOpenAI,OpenAIChatCompletionsModel,set_tracing_disabled
 
-# set_tracing_disabled(disabled=True)
+set_tracing_disabled(disabled=True)
 
 key = config("GEMINI_API_KEY")
 base_url = config("BASE_URL_GEMINI")

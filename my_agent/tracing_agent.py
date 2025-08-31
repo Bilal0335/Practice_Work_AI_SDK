@@ -1,7 +1,7 @@
 
 # ! tracing_agent.py
 
-from agents import Agent,set_tracing_disabled,set_trace_processors,trace
+from agents import Agent,set_tracing_disabled,set_trace_processors
 from agents.tracing.processors import ConsoleSpanExporter,BatchTraceProcessor,default_processor
 from agents.tracing.processor_interface import TracingExporter
 from agents.tracing.spans import Span
@@ -40,8 +40,8 @@ processor = BatchTraceProcessor(exporter)
 # set_tracing_disabled(disabled=True)
 set_trace_processors([
                       processor,
-                    #   default_processor()
-                      ])
+                    #   default_processor()  # sent to the dashbaord openai
+                      ]) # override default processor(s)
 
 tracing_agents = Agent(
     name="my_agent",

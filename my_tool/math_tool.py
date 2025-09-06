@@ -4,6 +4,7 @@
 
 from agents import function_tool,FunctionToolResult,ToolsToFinalOutputResult
 from rich import print
+import rich
 
 
 @function_tool

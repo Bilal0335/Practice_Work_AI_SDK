@@ -2,7 +2,7 @@
 
 # ! math_tool.py
 
-from agents import function_tool
+from agents import function_tool,FunctionToolResult,ToolsToFinalOutputResult
 from rich import print
 
 
@@ -85,3 +85,27 @@ def get_weather(city: str) -> str:
 def new_tool() -> str:
     """A new demo tool"""
     return "I'm a new tool!"
+
+def my_behavior(context, tool_results: list[FunctionToolResult]):
+    rich.print("\n[bold green]=== Custom Tool Use Behavior Called ===[/bold green]")
+    # rich.print("Context:", context)
+    # rich.print("Tool Results:", tool_results)
+
+    tool_name = tool_results[0].tool.name
+    tool_output = tool_results[0].output
+
+    if tool_name == "get_time":
+        return ToolsToFinalOutputResult(
+            is_final_output=True,
+            final_output=f"[CUSTOM] Time tool returned: {tool_output}",
+        )
+    elif tool_name == "plus":
+        return ToolsToFinalOutputResult(
+            is_final_output=True,
+            final_output=f"[CUSTOM] Plus tool ne ye result diya: {tool_output}",
+        )
+    else:
+        return ToolsToFinalOutputResult(
+            is_final_output=False,
+            final_output=None,
+        )

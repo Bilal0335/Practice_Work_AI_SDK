@@ -6,7 +6,7 @@ from agents import Agent,ModelSettings
 from agents.agent import StopAtTools
 from my_config.gemini_config import GEMINI_MODEL
 from my_config.groq_config import GROQ_MODEL
-from my_tool.math_tool import plus,subtract,multiply
+from my_tool.math_tool import plus,subtract,multiply,my_behavior
 
 
 tool_control_agents = Agent(
@@ -17,7 +17,9 @@ tool_control_agents = Agent(
     # tool_use_behavior="run_llm_again",
     # tool_use_behavior="stop_on_first_tool",
     # tool_use_behavior=StopAtTools(stop_at_tool_names=['subtract']),
-    tool_use_behavior=StopAtTools(stop_at_tool_names=['plus','multiply']),
+    # tool_use_behavior=StopAtTools(stop_at_tool_names=['plus','multiply']),
+    tool_use_behavior=my_behavior,
+    
     # model_settings=ModelSettings(tool_choice="auto"),
     # model_settings=ModelSettings(tool_choice="none"),
     # model_settings=ModelSettings(tool_choice="required"),
